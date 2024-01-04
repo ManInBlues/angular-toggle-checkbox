@@ -1,0 +1,48 @@
+.buttonWarpper {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: fit-content;
+  border: 3px solid #f02d1f;
+  border-radius: 20px;
+  background: #f02d1f;
+  color: #f02d1f;
+  cursor: pointer;
+}
+.buttonWarpper::before {
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  left: 0%;
+  border-radius: 20px;
+  background: white;
+  transition: all 0.3s;
+}
+.checkBox:checked + .buttonWarpper::before {
+  left: 50%;
+}
+.buttonWarpper div {
+  padding: 10px;
+  text-align: center;
+  z-index: 1;
+}
+.checkBox {
+  display: none;
+}
+.checkBox:checked + .buttonWarpper div:first-child {
+  color: white;
+  transition: color 0.5s;
+}
+.checkBox:checked + .buttonWarpper div:last-child {
+  color: #f02d1f;
+  transition: color 0.5s;
+}
+.checkBox + .buttonWarpper div:first-child {
+  color: #f02d1f;
+  transition: color 0.3s;
+}
+.checkBox + .buttonWarpper div:last-child {
+  color: white;
+  transition: color 0.5s;
+}
